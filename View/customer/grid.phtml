@@ -1,0 +1,55 @@
+<?php
+$customers = $this->getCollection();
+
+  ?>
+
+
+	
+	 <div class="row">
+	 	<div class="col-10">
+	 		<h3>CUSTOMER</h3>
+	 	</div>
+	 	<div class="col-2">
+		 <div class="btn btn-light"><a href="<?php echo $this->getUrl()->getUrl('customer','add'); ?>">ADD CUSTOMER
+		 </a></div> 
+	 	</div>
+	</div>
+	<table class="table table-bordered w-100">
+		
+		<tr>
+			<th>CustomerId</th>
+			<th>FirstName</th>
+			<th>LastName</th>
+			<th>Email</th>
+			<th>Gender</th>
+			<th>Mobile</th>
+			<th>Status</th>
+			<th>CreatedAt</th>
+			<th>UpdatedAt</th>
+			<th>Edit</th>
+			<th>Delete</th>
+			<th>Address</th>
+			 
+		</tr>
+		  	<?php foreach ($customers->getData() as $row):  ?>
+		<tr>
+			<td><?php echo $row->customer_id;?> </td>
+			<td><?php echo $row->first_name;?></td>
+			<td><?php echo $row->last_name;?></td>
+			<td><?php echo $row->email;?></td>
+			<td><?php echo $row->gender;?></td>
+			<td><?php echo $row->mobile;?></td>
+			<td><?php echo $row->getStatusText();?></td>
+			<td><?php echo $row->created_at;?></td>
+			<td><?php echo $row->updated_at;?></td>
+			<td><a href="<?php echo $this->getUrl()->getUrl('customer','edit',['customer_id'=>$row->customer_id]);?>">Edit</a></td>
+			<td><a href="<?php echo $this->getUrl()->getUrl('customer','delete',
+			['customer_id'=>$row->customer_id]);?>">Delete</a></td>
+			<td><a href="<?php echo $this->getUrl()->getUrl('customer_Address','grid',['customer_id'=>$row->customer_id]);?>">View Address</a></td>
+			
+			
+		</tr>
+	<?php endforeach; ?>
+
+	</table>
+

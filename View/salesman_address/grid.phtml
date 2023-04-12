@@ -1,0 +1,44 @@
+<?php
+$salesmanAdd = $this->address;
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> Salesman Address Grid</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+<body>
+	<?php
+		require 'View\html\header.phtml';
+		?>
+<table border="1px" width="100%">
+	<tr>
+		<th>Address_id</th>
+		<th>Address</th>
+		<th>City</th>
+		<th>State</th>
+		<th>Country</th>
+		<th>Zip_code</th>
+		<th>Salesman_id</th>
+
+	</tr>
+		 
+	<tr>
+		<td><?php echo $salesmanAdd->address_id;?></td>
+		<td><?php echo $salesmanAdd->address;?></td>
+		<td><?php echo $salesmanAdd->city;?></td>
+		<td><?php echo $salesmanAdd->state;?></td>
+		<td><?php echo $salesmanAdd->country;?></td>
+		<td><?php echo $salesmanAdd->zipcode;?></td>
+		<td><?php echo $salesmanAdd->salesman_id;?></td>
+		
+		 
+	</tr>
+</table>
+</body>
+</html>
